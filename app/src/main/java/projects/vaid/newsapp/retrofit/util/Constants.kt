@@ -1,4 +1,4 @@
-package projects.vaid.newsapp.data.util
+package projects.vaid.newsapp.retrofit.util
 
 class Constants {
 

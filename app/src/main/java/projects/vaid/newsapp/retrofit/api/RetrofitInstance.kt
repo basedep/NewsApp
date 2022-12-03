@@ -1,8 +1,8 @@
-package projects.vaid.newsapp.data.api
+package projects.vaid.newsapp.retrofit.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import projects.vaid.newsapp.data.util.Constants.Companion.BASE_URL
+import projects.vaid.newsapp.retrofit.util.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

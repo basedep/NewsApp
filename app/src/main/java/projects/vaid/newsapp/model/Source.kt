@@ -1,4 +1,4 @@
-package projects.vaid.newsapp.data.model
+package projects.vaid.newsapp.model
 
 data class Source(
     val id: String,
