@@ -16,13 +16,12 @@ class NewsActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_news)
-
 
         val repository = NewsRepository(ArticleDatabase(this))
         val viewModelProviderFactory = NewsViewModelProviderFactory(repository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory)[NewsViewModel::class.java]
 
+        setContentView(R.layout.activity_news)
         //соединяем с navigation
         bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
 
