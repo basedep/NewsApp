@@ -1,7 +1,7 @@
 package projects.vaid.newsapp.retrofit.api
 
 import projects.vaid.newsapp.model.NewsResponse
-import projects.vaid.newsapp.retrofit.util.Constants.Companion.API_KEY
+import projects.vaid.newsapp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
