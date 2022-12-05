@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_search_news.*
 import kotlinx.coroutines.Job
@@ -21,13 +22,24 @@ import projects.vaid.newsapp.util.Resource
 class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
 
     lateinit var viewModel: NewsViewModel
-    private val TAG = "BreakingNewsFragment"
+    private val TAG = "SearchNewsFragment"
     lateinit var newsAdapter: NewsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
         setupRecyclerView()
+
+        newsAdapter.setOnItemClickListener{
+            val bundle = Bundle().apply{
+                putSerializable("article", it)  //кладем объект Article
+            }
+
+            findNavController().navigate(
+                R.id.action_searchNewsFragment_to_articleFragment, //action
+                bundle    //передаем объект Article во фрагмент
+            )
+        }
 
         var job: Job? = null
         etSearch.addTextChangedListener{ editable ->  //при изменении текста
