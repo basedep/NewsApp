@@ -27,7 +27,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         //при нажатии
         newsAdapter.setOnItemClickListener{
             val bundle = Bundle().apply{
-                putSerializable("article", it)  //кладем объект Article
+                putParcelable("article", it)  //кладем объект Article
             }
 
             findNavController().navigate(

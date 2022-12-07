@@ -13,8 +13,8 @@ import projects.vaid.newsapp.ui.NewsViewModel
 
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
-    lateinit var viewModel: NewsViewModel
-    val args: ArticleFragmentArgs by navArgs() //класс сгенерированный Navigation
+    private lateinit var viewModel: NewsViewModel
+    private val args: ArticleFragmentArgs by navArgs() //класс сгенерированный Navigation
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,6 +22,8 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         val article = args.article //получаем Article из аргументов
 
         webView.apply {
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
             webViewClient = WebViewClient()
             loadUrl(article.url)        //отображаем в webView
         }
