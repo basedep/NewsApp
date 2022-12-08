@@ -25,7 +25,7 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             webViewClient = WebViewClient()
-            loadUrl(article.url)        //отображаем в webView
+            loadUrl(article.url!!)        //отображаем в webView
         }
 
         fab.setOnClickListener{

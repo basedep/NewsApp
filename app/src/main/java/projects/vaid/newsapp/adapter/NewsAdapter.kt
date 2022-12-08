@@ -47,7 +47,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>(){
                 .placeholder(R.drawable.image_placeholder)
                 .fit()
                 .into(ivArticleImage)
-            tvSource.text = article.source.name
+            tvSource.text = article.source?.name
             tvTitle.text = article.title
             tvDescription.text = article.description
             tvPublishedAt.text = article.publishedAt
