@@ -3,6 +3,7 @@ package projects.vaid.newsapp.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,7 +48,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let{ msg ->
-                        Log.d(TAG, "Error: $msg")
+                        Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_LONG).show()
                     }
                 }
                 is Resource.Loading -> {
